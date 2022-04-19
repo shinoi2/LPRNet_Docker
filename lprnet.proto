@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option cc_generic_services = true;
+
+service LprnetService {
+    rpc predict (LprnetRequest) returns (LprnetResponse) {}
+}
+
+message LprnetRequest {
+    repeated bytes images = 1;
+};
+
+message LprnetResponse {
+    repeated string labels = 1;
+};
